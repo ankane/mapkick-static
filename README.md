@@ -22,7 +22,7 @@ Mapkick Static uses the [Mapbox Static Images API](https://docs.mapbox.com/api/m
 
 Point map
 
-<img src="https://chartkick.com/mapkick-static/map-2x?v3" alt="Map" width="100%" height="100%">
+<img src="https://chartkick.com/mapkick-static/map-2x?v3" alt="Point map" width="100%" height="100%">
 
 ```erb
 <%= static_map [{latitude: 37.7829, longitude: -122.4190}] %>
@@ -30,7 +30,7 @@ Point map
 
 Area map (experimental)
 
-<img src="https://chartkick.com/mapkick-static/area-map-2x?v1" alt="Map" width="100%" height="100%">
+<img src="https://chartkick.com/mapkick-static/area-map-2x?v1" alt="Area map" width="100%" height="100%">
 
 ```erb
 <%= static_area_map [{geometry: {type: "Polygon", coordinates: ...}}] %>
