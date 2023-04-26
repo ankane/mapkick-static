@@ -22,6 +22,8 @@ Mapkick Static uses the [Mapbox Static Images API](https://docs.mapbox.com/api/m
 
 Point map
 
+<img src="https://chartkick.com/mapkick-static/map-2x?v2" alt="Map" width="800" height="400">
+
 ```erb
 <%= static_map [{latitude: 37.7829, longitude: -122.4190}] %>
 ```
