@@ -30,6 +30,8 @@ Point map
 
 Area map (experimental)
 
+<img src="https://chartkick.com/mapkick-static/area-map-2x?v1" alt="Map" width="100%" height="100%">
+
 ```erb
 <%= static_area_map [{geometry: {type: "Polygon", coordinates: ...}}] %>
 ```
