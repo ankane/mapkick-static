@@ -2,7 +2,7 @@
 
 Create beautiful static maps with one line of Ruby. No more fighting with mapping libraries!
 
-[See it in action](https://chartkick.com/mapkick-static)
+[See it in action](#maps)
 
 :fire: For JavaScript maps, check out [Mapkick](https://chartkick.com/mapkick)
 
