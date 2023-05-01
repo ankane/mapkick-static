@@ -49,7 +49,7 @@ module Mapkick
 
       def set_viewport(geojson)
         if geojson[:features].empty?
-          "0,0,1"
+          "0,0,0"
         elsif geojson[:features].size == 1 && (geometry = geojson[:features][0][:geometry]) && geometry&.[](:type) == "MultiPoint" && geometry[:coordinates].size == 1
           coordinates = geometry[:coordinates][0]
           zoom = 15
