@@ -11,6 +11,10 @@ class MapTest < Minitest::Test
     assert_map static_map(@data)
   end
 
+  def test_static_map_empty
+    assert_map static_map([])
+  end
+
   def test_static_area_map
     assert_map static_area_map([])
   end
