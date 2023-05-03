@@ -1,4 +1,4 @@
-## 0.1.1 (unreleased)
+## 0.1.1 (2023-05-03)
 
 - Fixed error with empty maps
 
