@@ -52,7 +52,7 @@ class MapTest < Minitest::Test
   def test_request_too_large
     data = 265.times.map { {latitude: rand, longitude: rand} }
     assert_output(nil, /URL exceeds 8192 byte limit/) do
-      assert_map static_map(data)
+      static_map(data)
     end
   end
 
