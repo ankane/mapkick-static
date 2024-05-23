@@ -6,7 +6,7 @@ Create beautiful static maps with one line of Ruby. No more fighting with mappin
 
 :fire: For JavaScript maps, check out [Mapkick](https://chartkick.com/mapkick)
 
-[![Build Status](https://github.com/ankane/mapkick-static/workflows/build/badge.svg?branch=master)](https://github.com/ankane/mapkick-static/actions)
+[![Build Status](https://github.com/ankane/mapkick-static/actions/workflows/build.yml/badge.svg)](https://github.com/ankane/mapkick-static/actions)
 
 ## Installation
 
