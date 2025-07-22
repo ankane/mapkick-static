@@ -1,5 +1,5 @@
 # stdlib
-require "cgi"
+require "cgi/escape"
 require "json"
 require "uri"
 
