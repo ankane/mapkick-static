@@ -41,7 +41,7 @@ class MapTest < Minitest::Test
   end
 
   def test_no_token
-    ENV.stub(:[], nil) do
+    with_no_token do
       error = assert_raises(Mapkick::Static::Error) do
         static_map(@data)
       end
@@ -62,5 +62,15 @@ class MapTest < Minitest::Test
     assert_kind_of Mapkick::Static::BaseMap, map
     assert_match "https://api.mapbox.com/", map.url
     system "open", map.url if ENV["OPEN"]
+  end
+
+  def with_no_token
+    previous_value = ENV["MAPBOX_ACCESS_TOKEN"]
+    begin
+      ENV.delete("MAPBOX_ACCESS_TOKEN")
+      yield
+    ensure
+      ENV["MAPBOX_ACCESS_TOKEN"] = previous_value
+    end
   end
 end
