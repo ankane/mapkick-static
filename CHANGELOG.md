@@ -1,3 +1,7 @@
+## 0.2.1 (unreleased)
+
+- Switched to `cgi/escape` for Ruby 4.0
+
 ## 0.2.0 (2025-04-03)
 
 - Dropped support for Ruby < 3.2
