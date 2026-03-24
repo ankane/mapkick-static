@@ -11,6 +11,12 @@ class MapTest < Minitest::Test
     assert_map static_map(@data)
   end
 
+  def test_static_map_zoom
+    map = static_map(@data, zoom: 10)
+    assert_map map
+    assert_match ",10/", map.url
+  end
+
   def test_static_map_empty
     assert_map static_map([])
   end

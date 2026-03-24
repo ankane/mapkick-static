@@ -3,9 +3,10 @@ module Mapkick
     class BaseMap
       attr_reader :url, :url_2x
 
-      def initialize(data, width: 800, height: 500, markers: {}, style: "mapbox/streets-v12", alt: "Map", access_token: nil, view_context: nil)
+      def initialize(data, width: 800, height: 500, zoom: 15, markers: {}, style: "mapbox/streets-v12", alt: "Map", access_token: nil, view_context: nil)
         @width = width.to_i
         @height = height.to_i
+        @zoom = zoom
         @alt = alt
         @view_context = view_context
 
@@ -52,8 +53,7 @@ module Mapkick
           "0,0,0"
         elsif geojson[:features].size == 1 && (geometry = geojson[:features][0][:geometry]) && geometry&.[](:type) == "MultiPoint" && geometry[:coordinates].size == 1
           coordinates = geometry[:coordinates][0]
-          zoom = 15
-          "%f,%f,%d" % [round_coordinate(coordinates[0].to_f), round_coordinate(coordinates[1].to_f), zoom.to_i]
+          "%f,%f,%d" % [round_coordinate(coordinates[0].to_f), round_coordinate(coordinates[1].to_f), @zoom.to_i]
         else
           "auto"
         end
