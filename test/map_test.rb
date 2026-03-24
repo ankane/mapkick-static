@@ -61,7 +61,11 @@ class MapTest < Minitest::Test
   def assert_map(map)
     assert_kind_of Mapkick::Static::BaseMap, map
     assert_match "https://api.mapbox.com/", map.url
-    system "open", map.url if ENV["OPEN"]
+    if ENV["OPEN"]
+      unless system("open", map.url)
+        puts map.url
+      end
+    end
   end
 
   def with_no_token
