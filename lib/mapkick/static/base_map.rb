@@ -3,10 +3,11 @@ module Mapkick
     class BaseMap
       attr_reader :url, :url_2x
 
-      def initialize(data, width: 800, height: 500, markers: {}, style: "mapbox/streets-v12", alt: "Map", access_token: nil, view_context: nil)
+      def initialize(data, width: 800, height: 500, markers: {}, style: "mapbox/streets-v12", alt: "Map", html: {}, access_token: nil, view_context: nil)
         @width = width.to_i
         @height = height.to_i
         @alt = alt
+        @html = html
         @view_context = view_context
 
         prefix = "https://api.mapbox.com/styles/v1"
@@ -25,7 +26,8 @@ module Mapkick
       end
 
       def to_s
-        @view_context.image_tag(url, alt: @alt, style: image_style, srcset: "#{url} 1x, #{url_2x} 2x")
+        attributes = {alt: @alt, style: image_style, srcset: "#{url} 1x, #{url_2x} 2x"}.merge(@html)
+        @view_context.image_tag(url, **attributes)
       end
 
       private

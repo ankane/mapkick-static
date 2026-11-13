@@ -11,6 +11,29 @@ class MapTest < Minitest::Test
     assert_map static_map(@data)
   end
 
+  def test_image_attributes
+    attributes = static_map(@data).to_s
+    assert_equal "Map", attributes[:alt]
+    assert_equal "width: 800px; height: 500px;", attributes[:style]
+    assert_match " 2x", attributes[:srcset]
+  end
+
+  def test_html_attributes
+    attributes = static_map(@data, html: {loading: "lazy", class: "map"}).to_s
+    assert_equal "lazy", attributes[:loading]
+    assert_equal "map", attributes[:class]
+  end
+
+  def test_html_without_inline_style
+    attributes = static_map(@data, html: {style: nil}).to_s
+    assert_nil attributes[:style]
+  end
+
+  # stands in for ActionView's image_tag
+  def image_tag(url, **attributes)
+    attributes
+  end
+
   def test_static_map_empty
     assert_map static_map([])
   end
