@@ -85,6 +85,12 @@ Alt text
 <%= static_map data, alt: "Map of ..." %>
 ```
 
+HTML attributes (use `style: nil` to remove the inline width and height)
+
+```erb
+<%= static_map data, html: {loading: "lazy", class: "map", style: nil} %>
+```
+
 Marker color
 
 ```erb
